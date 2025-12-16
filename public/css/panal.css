@@ -1,0 +1,492 @@
+
+
+.dialogue {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #b6b6fb;
+    width: 400px;
+    height: 300px;
+    z-index: 10000;
+    padding: 10px;
+    border-radius: 22px;
+}
+
+body {
+    background: #dadaff;
+    margin: 0px;
+    padding: 0px;
+    user-select: none;
+    font-family: 'Mona Sans', sans-serif;
+}
+
+
+.cont {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+}
+.section-a {
+    background-color: #2a2b2ce0;
+    width: 20.9%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.6s ease-in-out;
+    border-radius: 0 0 19px 0px;
+    position: relative;
+    font-size: 15px;
+    color: #fff;
+    overflow: hidden;
+
+    &
+
+    .entet {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: 15px;
+        margin-top: 15px; 
+        cursor: pointer;
+        
+    }
+
+    
+
+    div {
+        display: flex;
+        flex-direction: row;
+        align-items: center;  
+        padding-left: 10px;     
+    }
+
+    #s-bord, #s-boutique, #s-commandes, #s-produit, #s-factur, #s-analys, #s-support, #s-reglage {
+        width: 100%;
+        opacity: 0.5;
+        cursor: pointer;
+        margin-bottom: 10px;
+    }
+
+    #s-bord:hover, #s-boutique:hover, #s-commandes:hover, #s-produit:hover, #s-factur:hover, #s-analys:hover, #s-support:hover, #s-reglage:hover  {
+
+        background: #747479;
+        opacity: 1;
+    }
+
+
+
+    img {
+        width: 25px;
+        height: 25px;
+        margin-right: 7px;
+    }
+
+    .fin {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin: 0;
+        margin-bottom: 10px;
+        padding: 0px;
+    }
+
+    #s {
+        width: 100%;
+    }
+}
+
+
+
+.section-a:hover #s {
+    opacity: 1;
+}
+
+.section-b {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    position: relative;
+
+    &
+
+    .dashbord {
+        background: #fff;
+        margin: 0px;
+        height: 45px;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        align-items: center;
+        position: relative;
+        
+    }
+    
+    .solde, .montant {
+        position: relative;
+        width: max-content;
+        font-size: 14px;
+        text-align: center;
+        margin-right: 15px;
+
+    }
+
+    .solde {
+        color: green;
+    }
+
+    .montant {
+        color: #fd1010;
+    }
+
+    .dashbord-b {
+        margin-left: auto;
+    }
+
+    #plann {
+        text-decoration: none;
+        color: #363943ae;
+        font-size: 15px;
+    }
+
+    #plann:hover {
+        color: #3759c6eb;
+        
+    }
+
+    .dashbord-b {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+    }
+    .notification {
+        width: 27px;
+        height: 27px;
+        margin-left: 10px;
+        margin-right: 10px;
+       
+    }
+
+    #nnoti {
+        position: absolute;
+        background-color: #fd1010;
+        color: #fff;
+        padding: 5px;
+        border-radius: 360px;
+        font-size: 10px;
+        text-align: center;
+        right: 30px;
+        top: 10px;
+    }
+
+    .dashbord-f, .dashbord-ff {
+        background: #ffffff;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+        padding: 5px;
+        
+    }
+
+    .part-botique {
+       
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+
+        & h3 {
+            font-size: 15px;
+            text-align: center;
+        }
+        
+        p{
+            font-size: 14px;
+        }
+
+        .nom-boutique {
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.241);
+            padding: 5px;
+            margin-bottom: 30px;
+            border-radius: 11px;
+            width: 500px;
+        }
+
+.form-control {
+    position: relative;
+    margin: 10px 0 30px;
+    width: 390px;
+   
+   
+  }
+  
+  .form-control input {
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px #000000 solid;
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    font-size: 15px;
+    color: #000000;
+  }
+  
+  .form-control input:focus,
+  .form-control input:valid {
+    outline: 0;
+    border-bottom-color: rgb(70, 76, 162);
+  }
+  .form-control label {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    pointer-events: none;
+  }
+  
+  .form-control label span {
+    display: inline-block;
+    font-size: 15px;
+    min-width: 5px;
+    color: #000000;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .form-control input:focus+label span,
+  .form-control input:valid+label span {
+    color:  rgb(70, 76, 162);
+    transform: translateY(-30px);
+  }
+
+        .part-boutique1, .part-boutique2 {
+            margin-bottom: 10px;
+            margin-bottom: 30px;
+            background: #ffffff;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .part-boutique2 {
+            padding: 10px;
+            padding-left: 20px;
+        }
+    }
+
+    #txt-parametre-genral {
+        background: #ffffff;
+        padding: 10px;
+        border-radius: 11px;
+        border: solid 1px #000;
+        box-shadow: 10px 3px 10px #0000003b;
+    }
+
+    
+
+    .nom-de-boutique {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #kk {
+        display: flex;
+        flex-direction: row;
+        margin-left: 10px;
+        margin-right: 10px;
+        align-items: center;
+        width: 400px;
+        padding: 10px;
+        margin-bottom: 11px;
+        background: #fff;
+        border-radius: 11px;
+        border: solid 1px #000;
+        transition: all ease-in-out 0.5s;
+        position: relative;
+    }
+
+    #put {
+        height: 35px;
+        border-radius: 11px;
+        border: none;
+        padding: 10px;
+        background: #dadaff;
+        outline: solid 1px #6161cf;
+        display: none;
+        position: absolute;
+        left: 450px;
+    }
+
+    #n-boutique, #nn, #e-boutique {
+        margin-right: 20px;  
+    }
+
+
+
+    #cnf {
+        width: 100px;
+        height: 30px;
+        border-radius: 10px;
+        border: none;
+        background: #dadaff;
+        margin-left: auto;
+        
+        opacity: 0.5;
+        border: solid 1px;
+        cursor: no-drop;
+    }
+
+    #st-1, #st-2 {
+        position: relative;
+        width: 20px;
+        cursor: pointer;
+        margin-left: auto;
+    }
+
+    #etat {
+        width: 150px;
+        height: 30px;
+        border-radius: 7px;
+        background: #b6b6fb;
+        font-size: 15px;
+        outline: none;
+        display: none;
+    }
+
+    #etat option {
+        font-size: 15px;
+        background: #fff;
+    }
+
+    #etat option:hover {
+        color: #fff;
+        background: #1018fd;
+        padding-inline: 20px;
+    }
+    
+
+    .titre-tablaux-de-bord {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+
+    .tablaux-de-bord, .tablaux-de-bord2 {
+        box-shadow: 0px 4px 20px 3px rgba(0, 0, 0, 0.2);
+        height: min-content; 
+        margin: 20px;
+        border-radius: 20px;
+        transition: ease-in-out 0.4s;
+        overflow: hidden;
+        margin-left: 7px;
+        margin-right: 7px;
+        width: 35%;
+        opacity: 1;
+        user-select: none;  
+        border: solid 1px #000;   
+      } 
+
+      .tablaux-de-bord2 {
+        margin-left: auto;
+      }
+    
+    .titre-comande, .titre-comande1, .titre-comande2, .titre-comande3, .titre-comande4, .titre-comande5 {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        transition: ease-in-out 0.4s;
+        overflow: hidden;
+        margin-top: 11px;
+        margin-bottom: 11px;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 15px;
+       
+        &
+        img {
+            width: 25px;
+            height: 25px;
+            margin-right: 5px;
+            transition: ease-in-out 0.4s;
+        }
+    }
+
+
+
+    .titre-comande:hover #boit, .titre-comande1:hover #boit1, .titre-comande2:hover #boit2, .titre-comande3:hover #boit3, .titre-comande4:hover #boit4, .titre-comande5:hover #boit5, .titre-comande6:hover #boit6{
+        transition: ease-in-out 0.4s;  
+        transform: rotate(355deg);
+        
+        
+    }
+
+    .genral {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .parametre-de-boutique {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+.clikable {
+    background: #747479 !important;
+    opacity: 1 !important;
+    cursor: default !important;
+}
+
+.notclickable  {
+    background: transparent;
+    opacity: 0.5 !important;
+}
+
+.bi {
+    background-color: #fff;
+    padding: 6px;
+    padding-top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+
+    & #a, #b {
+        color: #561693;
+        text-decoration: none;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding: 7px;
+        background-color: #dadaff;
+        border-radius: 0 0 10px 10px;
+    }
+
+    #b {
+        color: #000;
+    }
+
+    #a:hover, #b:hover {
+        color: #561693;
+        
+    }
+
+    
+    
+}
+
+#confirm {
+    margin-top: 20px;
+    height: 30px;
+    width: 200px;
+    border-radius: 7px;
+    border: none;
+    background: #dadaff;
+}
+
+

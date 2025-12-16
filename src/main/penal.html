@@ -1,0 +1,279 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Admin</title>
+   
+    <link rel="stylesheet" href="../css/panal.css">
+    <link rel="stylesheet" href="../css/anim-part1.css">
+</head>
+
+<body>
+
+    <div class="dialogue" style="display: none;">
+        <p>Changer l'eteat actuele de votre boutique</p>
+    </div>
+    <div class="cont1">
+        <div class="cont">
+            <div class="section-a">
+    
+                <div class="entet">
+                    <img id="ico" src="../img/bar.svg" alt="">
+                </div>
+    
+                <div id="s-bord" tabindex="0">
+                    <img src="../img/home.svg" alt="">
+                    <p>Tablaux de bord</p>
+                </div>
+    
+                <div id="s-boutique" tabindex="0"> 
+                    <img src="../img/produi.svg" alt="">
+                    <p>Boutique</p>
+                </div>
+    
+                <div id="s-commandes" tabindex="0">
+                    <img src="../img/box.svg" alt="">
+                    <p>Commandes</p>
+                </div>
+    
+                <div id="s-produit" tabindex="0">
+                    <img src="../img/stok.svg" alt="">
+                        <p>Produit</p>
+                    </img>
+                </div>
+    
+                <div id="s-factur" tabindex="0">
+                    <img src="../img/facture.svg" alt="">
+                        <p>Facturation</p>
+                    </img>
+                </div>
+    
+                <div id="s-analys" tabindex="0">
+                    <img src="../img/analyse.svg" alt="">
+                        <p>Analystique</p>
+                    </img>
+                </div>
+    
+                <div class="fin">
+                    <div id="s-support" tabindex="0">
+                        <img src="../img/support.svg" alt="">
+                            <p>suport</p>
+                        </img>
+                    </div>
+        
+                    <div id="s-reglage" tabindex="0">
+                        <img src="../img/setting.svg" alt="">
+                            <p>Parametre</p>
+                    </img>
+                </div>
+    
+    
+    
+                </div>
+    
+                
+    
+        </div>
+    
+        <div class="section-b">
+            <div class="dashbord">
+    
+                <div class="Solde">
+                    <span>Solde</span> <br>
+                    <span id="s-sold">$ 0.00</span>
+                </div>
+    
+                <div class="montant">
+                    <span>Perte</span> <br>
+                    <span>$ 0.00</span>
+                </div>
+    
+                <div class="dashbord-b">
+                    <div class="plane">
+                        <a id="plann" href="">Mettre à nivaux</a>
+                    </div>
+    
+                    <div class="notification">
+                        <span id="nnoti">0</span>
+                        <img src="../img/notification.svg" alt="" id="notif">
+                    </div>
+                </div>
+    
+            </div>
+
+            <div class="parti-home">
+
+            <div class="dashbord-f">
+
+                <div class="nom-de-boutique">
+                    <p id="txt-parametre-genral">Alpha-Shop Parametre generale</p>
+                </div>
+
+                <div class="parametre-de-boutique">
+                    
+                    <div id="kk">
+                        <p id="nn">Nom de la boutique :</p>
+                        <p id="n-boutique"></p>
+                        <img id="st-1" src="../img/stylo.svg" alt="">
+                        <input id="put" type="text" placeholder="Nouvaux nom">
+                    </div>
+
+                    <div id="kk">
+                        <p id="nn">Etat de votre boutique :</p>
+                        <p id="e-boutique"></p>
+                        <select name="etat" id="etat">
+                            <option value="Actif">Actif</option>
+                            <option value="hor-service">hor-service</option>
+                        </select>
+                        <img src="../img/stylo.svg" alt="" id="st-2">
+                     
+                        
+                    </div>
+
+                    <div>
+                        <button id="cnf">Mettre a jour</button>
+                    </div>
+                </div>
+                 
+            </div>
+
+            <div class="dashbord-ff"> 
+                <div class="titre-tablaux-de-bord">
+                    <p id="txt-parametre-genral">Aperçu de votre tableau de bord</p>
+                </div>
+                
+                <div class="genral">
+                <div class="tablaux-de-bord">
+                    <div class="parti-comande1">
+
+                        <div class="titre-comande">
+                            <img class="boit" id="boit" src="../img/box2.svg" alt="">
+                            <p>Commande Aujourd’hui</p>
+                            <p id="day" style="margin-left: auto;">1</p>
+                            
+                        </div>
+
+                    </div>
+
+                    <div class="parti-comande3">
+
+                        <div class="titre-comande2">
+                            <img class="boit2" id="boit2" src="../img/box2.svg" alt="">
+                            <p>Commande cette semaine</p>
+                            <p id="last-week" style="margin-left: auto;">1</p>
+                        </div>
+
+                        
+                    </div>
+                    
+                    <div class="parti-comande4">
+
+                        <div class="titre-comande3">
+                            <img class="boit3" id="boit3" src="../img/box2.svg" alt="">
+                            <p>Commande ce mois</p>
+                            <p id="last-month" style="margin-left: auto;">1</p>
+                        </div>
+
+                    </div>
+
+                    <div class="parti-comande5">
+
+                        <div class="titre-comande4">
+                            <img class="boit4" id="boit4" src="../img/box2.svg" alt="">
+                            <p>Commande cette Annes</p>
+                            <p id="last-year" style="margin-left: auto;">1</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="parti-comande6">
+
+                       
+                        
+                    </div>
+
+                </div>
+
+                <div class="tablaux-de-bord2">
+                    <div class="parti-comande1">
+
+                        <div class="titre-comande">
+                            <img class="boit" id="boit" src="../img/mony.svg" alt="">
+                            <p>Gain Aujourd’hui</p>
+                            <p id="day-p" style="margin-left: auto;">1</p>
+                            
+                        </div>
+
+                    </div>
+
+
+                    <div class="parti-comande3">
+
+                        <div class="titre-comande2">
+                            <img class="boit2" id="boit2" src="../img/mony.svg" alt="">
+                            <p>Gain cette semaine</p>
+                            <p id="last-week-p" style="margin-left: auto;">1</p>
+                        </div>
+
+                        
+                    </div>
+                    
+                    <div class="parti-comande4">
+
+                        <div class="titre-comande3">
+                            <img class="boit3" id="boit3" src="../img/mony.svg" alt="">
+                            <p>Gain ce mois</p>
+                            <p id="last-month-p" style="margin-left: auto;">1</p>
+                        </div>
+
+                    </div>
+
+                    <div class="parti-comande5">
+
+                        <div class="titre-comande4">
+                            <img class="boit4" id="boit4" src="../img/mony.svg" alt="">
+                            <p>Gain cette Annes</p>
+                            <p id="last-year-p" style="margin-left: auto;">1</p>
+                        </div>
+                        
+                    </div>
+
+                    <div class="parti-comande6">
+
+                        
+                    </div>
+
+                </div>
+                </div>
+                
+            </div>
+                 
+             </div>
+
+               <div class="part-botique">
+
+                <div class="part-boutique1">
+                    <div>
+                        <h3>Parametrage de votre boutique</h3>                  
+                    </div>
+
+
+                </div>
+                
+                
+        
+            </div>
+            
+            
+        </div>
+        </div>
+
+    </div>
+    
+    
+</body>
+
+<script src="../js/penal.js"></script>
+</html>
