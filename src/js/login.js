@@ -126,11 +126,10 @@ document.getElementById("btn")?.addEventListener("click", async function(event) 
             await go("login");
 
             // Import dynamique depuis public/js/login1.js
-            const module = await import("/js/login1.js");
+            const module = await import("./js/login1.js");
             module.initLogin();
         } catch (err) {
             console.error("Erreur lors du chargement de la page login :", err);
         }
     }
 });
-
