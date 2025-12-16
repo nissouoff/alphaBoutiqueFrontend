@@ -2,15 +2,17 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
+  root: '.', // dossier racine de ton projet (où se trouve index.html)
+  publicDir: 'public', // dossier des assets statiques
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, 'src'), // pratique pour les imports
+      '@': path.resolve(__dirname, 'src'),
     },
   },
   build: {
-    outDir: 'dist',       // dossier de build final
-    emptyOutDir: true,    // vide dist avant chaque build
-    sourcemap: false,     // désactive les sourcemaps en prod
+    outDir: 'dist',   // dossier final
+    emptyOutDir: true,
+    sourcemap: false,
   },
-  base: './', // pour que le site fonctionne correctement sur Render ou sous un sous-dossier
+  base: './', // permet au site de fonctionner correctement après déploiement
 });
