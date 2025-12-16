@@ -12,7 +12,7 @@ document.querySelectorAll('.contenu-a div').forEach((element) => {
 const API_URL = "http://localhost:3000"; // URL backend Node
 
 
-async function autoLoginCheck() {
+/*async function autoLoginCheck() {
     try {
         const res = await fetch(`${API_URL}/api/auth/me`, {
             method: "GET",
@@ -35,7 +35,7 @@ async function autoLoginCheck() {
 }
 
 autoLoginCheck();
-
+*/
 document.getElementById("star").addEventListener("click", function(event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
     const target = document.getElementById("cont");
@@ -138,7 +138,7 @@ document.getElementById("btn")?.addEventListener("click", async function(event) 
             await go("login"); // go doit retourner une promesse
 
             // importer dynamiquement le JS de login1
-            const module = await import("./js/login1.js");
+            const module = await import("/src/js/login1.js");
             module.initLogin(); // initialise tous les événements et fonctions de la page
 
             // exposer go si besoin
@@ -148,4 +148,5 @@ document.getElementById("btn")?.addEventListener("click", async function(event) 
         }
     }
 });
+
 
