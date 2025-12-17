@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créer votre boutique</title>
+    <link rel="stylesheet" href="../css/c-boutique.css">
+</head>
+<body>
+
+<!-- Background -->
+<div class="background">
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=1470&q=80');"></div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1470&q=80');"></div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1499951360447-b19be8fe80f5?auto=format&fit=crop&w=1470&q=80');"></div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80');"></div>
+</div>
+
+<!-- Slogans -->
+<div class="slogans">
+    <p class="slogan active">Alpha Boutique - Votre succès commence ici !</p>
+    <p class="slogan">Top 1 des boutiques en ligne</p>
+    <p class="slogan">Créez votre empire commercial</p>
+    <p class="slogan">La boutique qui vous ressemble</p>
+</div>
+
+<!-- Formulaire -->
+<div class="container">
+
+    <div class="entet">
+        <p>AlphaBoutique - Crée ta boutique en ligne</p>
+    </div>
+
+    <form id="create-boutique-form" class="form-boutique">
+
+        <label for="nom-boutique">Nom de la boutique</label>
+        <input
+            type="text"
+            id="nom-boutique"
+            placeholder="Entrez le nom de votre boutique"
+            required
+        >
+
+        <label for="wilaya-boutique">Wilaya de la boutique</label>
+        <select id="wilaya-boutique" required>
+            <option value="">Sélectionnez la wilaya</option>
+        </select>
+
+        <label for="type-boutique">Type de boutique</label>
+        <select id="type-boutique" required>
+            <option value="">Sélectionnez le type</option>
+            <option>Electroménager</option>
+            <option>Accessoires</option>
+            <option>Vêtements</option>
+            <option>Chaussures</option>
+            <option>Cosmétiques</option>
+            <option>Bijoux</option>
+            <option>Informatique</option>
+            <option>Téléphonie</option>
+            <option>Sport</option>
+            <option>Décoration</option>
+            <option>Jouets</option>
+            <option>Papeterie</option>
+            <option>Alimentation</option>
+            <option>Bricolage</option>
+            <option>Santé</option>
+            <option>Meubles</option>
+            <option>Automobile</option>
+            <option>Artisanat</option>
+            <option>Services</option>
+            <option>Autres</option>
+        </select>
+
+        <!-- NUMÉRO ALGÉRIEN VALIDÉ -->
+        <label for="telephone-boutique">Numéro de téléphone</label>
+        <input
+            type="tel"
+            id="telephone-boutique"
+            placeholder="0555555555"
+            pattern="0[5-7][0-9]{8}"
+            maxlength="10"
+            required
+            title="Numéro algérien valide : commence par 05, 06 ou 07 et contient 10 chiffres"
+        >
+
+        <button type="submit">Créer la boutique</button>
+
+    </form>
+
+</div>
+
+<script src="../js/c-boutique.js"></script>
+
+<script>
+    // Sécurisation du numéro en live (UX propre)
+    const tel = document.getElementById("telephone-boutique");
+
+    tel.addEventListener("input", () => {
+        tel.value = tel.value.replace(/\D/g, "").slice(0, 10);
+    });
+</script>
+
+</body>
+</html>
