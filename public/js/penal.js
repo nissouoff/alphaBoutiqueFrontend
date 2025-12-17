@@ -1,3 +1,4 @@
+
 export function initLogin() {
 // Fonction pour récupérer les données de la boutique
 function getBoutiqueData(uid, nomb) {

@@ -12,7 +12,7 @@ document.querySelectorAll('.contenu-a div').forEach((element) => {
 const API_URL = "http://localhost:3000"; // URL backend Node
 
 
-async function autoLoginCheck() {
+/*async function autoLoginCheck() {
     try {
         const res = await fetch(`${API_URL}/api/auth/me`, {
             method: "GET",
@@ -23,7 +23,7 @@ async function autoLoginCheck() {
             await go("penal"); // go doit retourner une promesse
 
             // importer dynamiquement le JS de login1
-            const module = await import("./src/js/penal.js");
+            const module = await import("./js/penal.js");
             module.initLogin(); // initialise tous les événements et fonctions de la page
 
             // exposer go si besoin
@@ -35,7 +35,7 @@ async function autoLoginCheck() {
 }
 
 autoLoginCheck();
-
+*/
 document.getElementById("star").addEventListener("click", function(event) {
     event.preventDefault(); // Empêche le comportement par défaut du lien
     const target = document.getElementById("cont");
@@ -135,17 +135,17 @@ document.getElementById("btn")?.addEventListener("click", async function(event) 
         // ===== CHARGER LA PAGE LOGIN1 ET INIT JS =====
         try {
             // attendre que le HTML soit injecté
-            await go("login"); // go doit retourner une promesse
+           // await go("login"); // go doit retourner une promesse
 
             // importer dynamiquement le JS de login1
-            const module = await import("./src/js/login1.js");
-            module.initLogin(); // initialise tous les événements et fonctions de la page
+          //  const module = await import("/src/js/login1.js");
+           // module.initLogin(); // initialise tous les événements et fonctions de la page
 
             // exposer go si besoin
-            window.go = go;
+           // window.go = go;
+            window.location.href = "./main/login1.html";
         } catch (err) {
             console.error("Erreur lors du chargement de la page login :", err);
         }
     }
 });
-
