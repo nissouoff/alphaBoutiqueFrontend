@@ -1,5 +1,4 @@
 
-
 const API_URL = "https://backendalpha.onrender.com"; // URL backend Node
 let clickCount = 0;
 
@@ -432,5 +431,6 @@ document.getElementById("recup").addEventListener("click", function(event) {
             showError('erreur', "Erreur lors de l'envoi de l'email de récupération.");
         });
 });
+
 
 
