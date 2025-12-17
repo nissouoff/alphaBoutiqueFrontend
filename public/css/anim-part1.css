@@ -1,0 +1,49 @@
+.slide {
+    transform: rotate(180deg);
+}
+
+.slidee {
+    transform: rotate(355deg);
+}
+
+.visib {
+    display: block;
+}
+
+.novisib {
+    display: none;
+}
+
+.clk {
+    color: #1018fd;
+    background-color: #d6d6dd;
+    border-radius: 10px 10px 0 0 !important;     
+}
+
+.hiden {
+    opacity: 0.3;
+    pointer-events: none;
+    user-select: none;
+}
+
+.tablaux-de-bord:hover, .tablaux-de-bord2:hover {
+    transition: ease-in-out 0.4s;
+    box-shadow: 0px 4px 20px 3px rgba(0, 0, 0, 0.396);       
+    width: 400px;
+    opacity: 1;
+
+}
+
+
+.titre-comande:hover, .titre-comande1:hover, .titre-comande2:hover, .titre-comande3:hover, .titre-comande4:hover, .titre-comande5:hover{
+    color: #1018fd;
+    background-color: #d6d6dd;
+    border-radius: 11px;    
+    
+}
+
+#section-aclik {
+    background: #747479;
+    opacity: 1;
+}
+
