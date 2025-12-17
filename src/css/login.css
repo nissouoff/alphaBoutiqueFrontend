@@ -1,0 +1,620 @@
+
+body {
+    margin: 0px;
+    background: #dadaff;
+    user-select: none;
+    font-family: 'Poppins', sans-serif;
+    height: max-content;
+    padding-top: env(safe-area-inset-top, 20px); /* Valeur pour les appareils avec safe-area */
+}
+
+
+.hero {
+    height: 100vh;
+    background: url('../img/3.svg') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    animation: Bganim 10s linear forwards;
+}
+
+@keyframes Bganim {
+    0% {
+        background: url('../img/3.svg') center/cover no-repeat;
+    }
+
+    30% {
+        background: url('../img/4.svg') center/cover no-repeat;
+    }
+
+    60% {
+        background: url('../img/1.svg') center/cover no-repeat;
+    }
+
+    90% {
+        background: url('../img/2.svg') center/cover no-repeat;
+    }
+
+    100% {
+        background: url('../img/2.svg') center/cover no-repeat;
+    }
+
+    
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.hero a {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #658ff1;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
+}
+
+::-webkit-scrollbar {
+    width: 12px; /* Largeur de la barre de défilement */
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: #cfcffc; /* Couleur de la piste (l’arrière-plan de la scrollbar) */
+    border-radius: 3px; /* Coins arrondis pour la piste */
+    display: none;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4f4f5da1; /* Dégradé sur le pouce de la scrollbar */
+    border-radius: 3px; /* Coins arrondis pour le pouce */
+    border: 1px solid #4f4f5da1; /* Bordure qui donne un effet d’espace autour du pouce */
+    display: none;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #9898b690; /* Changement de couleur au survol */
+    display: none;
+}
+
+
+
+.cont {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.contenu {
+    display: flex;
+    flex-direction: column; /* Si tu veux que les éléments s'empilent verticalement */
+    color: #000000;
+    margin: 10px;
+    background-color: #9f9fff;
+    border-radius: 11px;
+    padding: 0.05px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    transition: all 0.6s ease-in-out; /* Transition fluide pour toutes les propriétés */
+    font-family: "Ubuntu", sans-serif;
+    align-items: center;
+    & h4 {
+        text-align: center;
+    }
+    
+}
+
+
+.contenu-a {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: 10px;
+    border-radius: 10px;
+    gap: 17px;    
+    justify-items: center; /* Aligner les éléments à gauche */
+    
+}
+
+.contenu-a img {
+    width: 35px;
+    height: 35px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    
+}
+
+.contenu-a div {
+    background: #6565ff;
+    width: 370px;
+    height: 340px;
+    border-radius: 11px;
+    overflow: hidden;
+    padding: 10px;
+    word-wrap: break-word;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: normal;
+    transition: all 0.4s ease-in-out; /* Transition fluide pour toutes les propriétés */
+    font-family: "Ubuntu", sans-serif;
+}
+
+
+.contenu-a div:hover, .contenu-a div:active, .contenu-a div:focus {
+    display: flex; 
+    flex-direction: column; /* Agrandissement en largeur */
+    border-radius: 20px; /* Coins plus arrondis */
+    background: #5555fb; /* Changement de couleur */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4); /* Ajout d'une ombre fluide */
+}
+
+.contenu-a div:hover img {
+    position: relative;
+    animation: test 0.3s linear 0s 1 forwards;
+}
+
+.contenu-a div img {
+    animation: rtest 0.3s linear 0s 1 forwards; /* Animation inverse lorsqu'on ne survole pas */
+}
+
+.contenu-a h3 {
+    transition: all 0.5s ease-in-out;
+    font-size: 15px;
+    background-color: #2424fb;
+    color: #fff;
+    margin-left: 5px;
+    width: max-content;
+    padding: 10px;
+    border-radius: 13px;
+    position: relative;
+    display: flex;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.contenu-a p {
+    margin-left: 7px;
+    font-size: 15px;
+}
+
+
+.contenu2 {
+    background: linear-gradient(125deg );
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centrer horizontalement */
+    align-items: center;     /* Centrer verticalement */
+    background: linear-gradient(90deg, #6363ee, #7272e6, #9696e3, #afaff9, #5c5cd3); /* Couleur de fond pour la section */
+    padding: 20px;        
+    background-size: 300% 300%;    /* Espacement autour du bouton */
+    margin-top: 20px;         /* Espacement au-dessus pour ne pas être collé à d'autres éléments */
+    border-radius: 10px; 
+    margin: 10px; 
+    animation: gradient-animation 3s ease infinite; /* Animation fluide et infinie */
+    transition: background 0.5s ease; /* Douce transition au survol */    /* Coins arrondis */
+}
+
+
+.btn {
+    --color1: #250af0;
+    --color2: rgb(255, 255, 255);
+    padding: 0.8em 1.75em;
+    background-color: transparent;
+    border-radius: 6px;
+    border: .3px solid var(--color1);
+    transition: .5s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+    font-weight: 300;
+    font-size: 17px;
+    font-family: "Ubuntu", sans-serif;
+    text-transform: uppercase;
+    color: var(--color);
+   }
+   
+   .btn::after, .btn::before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform: skew(90deg) translate(-50%, -50%);
+    position: absolute;
+    inset: 50%;
+    left: 25%;
+    z-index: -1;
+    transition: .5s ease-out;
+    background-color: var(--color1);
+   }
+   
+   .btn::before {
+    top: -50%;
+    left: -25%;
+    transform: skew(90deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover::before {
+    transform: skew(45deg) rotate(180deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover::after {
+    transform: skew(45deg) translate(-50%, -50%);
+   }
+   
+   .btn:hover {
+    color: var(--color2);
+   }
+   
+   .btn:active {
+    filter: brightness(.7);
+    transform: scale(.98);
+   }
+
+   .contenu3 {
+    margin: 5px;
+    margin-left: 10px;
+    font-family: "Ubuntu", sans-serif;
+    background: #9f9fff;
+    padding: 5px;
+    border-radius: 11px;
+   }
+
+   .contenu3-a {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    
+   }
+
+   .contenu3 h3 {
+    position: relative;
+    left: 10px;
+   }
+
+   .contenu3-a div {
+    background: #bfbff8;
+    width: 250px;
+    height: 250px;
+    padding: 10px;
+    border-radius: 9px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease-in-out;
+   }
+
+   .contenu3-a div:hover {
+    background: #b3b3fa;
+    transform: scale(1.03);
+    box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.7);
+    border-radius: 19px;
+   }
+
+   .contenu3-a div img {
+    width: 200px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+   }
+
+   .contenu3-a div h4 {
+    font-size: 13px;
+    text-align: center;
+    color: #0000da;
+    text-decoration: underline;
+   }
+
+   .contenu3-a div p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 400;
+    color: #ffffff;
+   }
+
+   .contenu4 {
+    background: #9f9fff;
+    margin-top: 10px;
+    border-radius: 11px;
+    margin: 5px;
+    padding: 10px;
+    font-family: "Ubuntu", sans-serif;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+   }
+   .contenu4-a {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    gap: 19px;
+    justify-items: center;
+   }
+
+
+   #one {
+    font-weight: bold;
+    font-size: 14px;
+    color: #0000da;
+    text-decoration: underline;
+   }
+
+   #one-a {
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+    text-align: center;
+    background: #bfbff8;
+    border-radius: 11px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.4);
+    transition: 0.2s ease-in-out;
+   }
+
+   #one-a:hover {
+    background: #b3b3fa;
+    transform: scale(1.04);
+    box-shadow: 0px 8px 28px rgba(0, 0, 0, 0.7);
+    border-radius: 19px;
+    
+   }
+
+   #two {
+    text-decoration: none;
+    color: #fff;
+    margin: 9px;
+    margin-top: 0px;
+    text-align: center;
+    transition: background 0.4s ease, border-radius 0.4s ease, text-decoration 0.2s ease; /* Animation sur fond, bordure, et décoration de texte */
+    font-size: 14px;
+    padding: 10px;
+   }
+
+   #two:hover {
+    background: #928afe;
+    text-decoration: underline;
+    padding: 10px;
+    border-radius: 15px;
+   }
+
+   .footer {
+    background-color: #8574f7;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.footer a {
+    color: #1100ff;
+    text-decoration: none;
+}
+
+/* From Uiverse.io by david-mohseni */ 
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    width: min-content;
+   
+  }
+
+  .wrapper ul {
+    padding: 0px;
+   
+  }
+  
+  .wrapper .icon {
+    position: relative;
+    background: #fff;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip {
+    position: absolute;
+    top: 0;
+    font-size: 14px;
+    background: #fff;
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 5px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .tooltip::before {
+    position: absolute;
+    content: "";
+    height: 8px;
+    width: 8px;
+    background: #fff;
+    bottom: -3px;
+    left: 50%;
+    transform: translate(-50%) rotate(45deg);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .wrapper .icon:hover .tooltip {
+    top: -45px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  
+  .wrapper .icon:hover span,
+  .wrapper .icon:hover .tooltip {
+    text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+  }
+  
+  .wrapper .facebook:hover,
+  .wrapper .facebook:hover .tooltip,
+  .wrapper .facebook:hover .tooltip::before {
+    background: #1877f2;
+    color: #fff;
+  }
+  
+  .wrapper .twitter:hover,
+  .wrapper .twitter:hover .tooltip,
+  .wrapper .twitter:hover .tooltip::before {
+    background: #1da1f2;
+    color: #fff;
+  }
+  
+  .wrapper .instagram:hover,
+  .wrapper .instagram:hover .tooltip,
+  .wrapper .instagram:hover .tooltip::before {
+    background: #e4405f;
+    color: #fff;
+  }
+  
+   @keyframes test {
+    0% {
+       width: 35px;
+       height: 35px;
+    }
+
+
+    100% {
+        width: 25px;
+       height: 25px;
+    }
+    
+}
+
+   @keyframes rtest {
+    0% {
+        width: 25px;
+       height: 25px;
+    }
+    
+    
+    100% {
+         width: 50px;
+         height: 50px;
+     }
+    
+}
+
+   @keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .contenu-a div {
+        width: 270px;
+        height: 220px;
+    }
+
+    .contenu-a h3 {
+        font-size: 11px;
+    }
+
+    .contenu-a p {
+        font-size: 12px;
+    }
+
+    .contenu-a {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenu3-a {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contenu3-a div p {
+        font-size: 12px;
+    }
+
+    .contenu3-a div h4 {
+        font-size: 12px;
+    }
+
+    .contenu3-a div img {
+        width: 170px;
+    }
+
+    #one, #two {
+        font-size: 13px;
+       }
+
+}
+
+@media (max-width: 660px) {
+
+    .contenu-a div {
+        width: 270px;
+        height: 220px;
+    }
+
+    .contenu-a h3 {
+        font-size: 11px;
+    }
+
+    .contenu-a p {
+        font-size: 12px;
+    }
+
+    .contenu-a {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contenu3-a {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .contenu3-a div p {
+        font-size: 12px;
+    }
+
+    .contenu3-a div h4 {
+        font-size: 12px;
+    }
+
+    .contenu3-a div img {
+        width: 170px;
+    }
+
+    #one, #two {
+        font-size: 13px;
+       }
+
+    .contenu4-a {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}

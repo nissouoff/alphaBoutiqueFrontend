@@ -135,18 +135,18 @@ document.getElementById("btn")?.addEventListener("click", async function(event) 
         // ===== CHARGER LA PAGE LOGIN1 ET INIT JS =====
         try {
             // attendre que le HTML soit injecté
-            await go("login"); // go doit retourner une promesse
+           // await go("login"); // go doit retourner une promesse
 
             // importer dynamiquement le JS de login1
-            const module = await import("/src/js/login1.js");
-            module.initLogin(); // initialise tous les événements et fonctions de la page
+          //  const module = await import("/src/js/login1.js");
+           // module.initLogin(); // initialise tous les événements et fonctions de la page
 
             // exposer go si besoin
-            window.go = go;
+           // window.go = go;
+            window.location.href = "./main/login1.html";
         } catch (err) {
             console.error("Erreur lors du chargement de la page login :", err);
         }
     }
 });
-
 

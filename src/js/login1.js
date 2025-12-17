@@ -1,8 +1,6 @@
 import { go } from "../router/router.js";  // chemin relatif correct
 
-export function initLogin() {
-
-const API_URL = "http://localhost:3000"; // URL backend Node
+const API_URL = "https://backendalpha.onrender.com"; // URL backend Node
 let clickCount = 0;
 
 // Références aux inputs
@@ -26,38 +24,40 @@ document.getElementById("cnx").addEventListener("click", async e => {
         const res = await fetch(`${API_URL}/api/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            credentials: "include", // 🔑 ici aussi
+            credentials: "include",
             body: JSON.stringify({ email, password })
         });
 
-        const data = await res.json();
+        console.log("LOGIN STATUS:", res.status, res.statusText);
+
+        let data;
+        try {
+            data = await res.json();
+        } catch {
+            throw new Error("Réponse serveur non valide");
+        }
+
+        console.log("LOGIN DATA:", data);
+
         if (!res.ok) throw new Error(data.message || "Erreur de connexion");
 
-        // Vérification de l'état du compte
-        if (data.needActivation) {
-            // Si le compte n'est pas confirmé, demande d'activation
-            showStep("cont-e");
-            startTimer();  // Commencer le compte à rebours
-        } else if (data.user.statue === "confirm" && data.user.boutique === "0") {
-            // Si l'utilisateur est confirmé et boutique est 0
-            showStep("cont-f");
-        } else {
-            // Si le compte est confirmé, on le redirige normalement
-            await go("penal"); // go doit retourner une promesse
-
-            // importer dynamiquement le JS de login1
-            const module = await import("/src/js/penal.js");
-            module.initLogin(); // initialise tous les événements et fonctions de la page
-
-            // exposer go si besoin
-            window.go = go;
+        if (data.status === "NO_CONFIRM") {
+            showStep("cont-e");  // Étape activation
+            startTimer();        // Timer compte à rebours
+        } else if (data.status === "OK") {
+            if (data.user.boutique === 0) showStep("cont-f");
+            else window.location.href = "./main/penal.html";
         }
+
     } catch (err) {
+        console.error("Frontend login error:", err);
         showError("erreur", err.message);
     } finally {
-        showOverlay(false);
+        showOverlay(false); // Retire toujours l’overlay
     }
 });
+
+
 
 // ==================== GESTION DU CLICK "SINGUP" ====================
 document.getElementById("singup").addEventListener("click", function(event) {
@@ -345,6 +345,56 @@ document.getElementById("crono")?.addEventListener("click", async function(event
 });
 
 
+/*document.getElementById("cnx")?.addEventListener("click", async (e) => {
+    e.preventDefault();
+    hideErrors();
+
+    const email = document.getElementById("put-email").value;
+    const password = document.getElementById("put-password").value;
+
+    if (!email || !password) {
+        showError("erreur1", "Champs manquants");
+        return;
+    }
+
+    document.getElementById("overlay").style.display = "block";
+
+    try {
+        const res = await fetch(`${API_URL}/api/auth/login`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            credentials: "include",
+            body: JSON.stringify({ email, password })
+        });
+
+        const data = await res.json();
+
+        // 👇 CAS NO CONFIRM
+        if (data.status === "NO_CONFIRM") {
+            localStorage.setItem("UID", data.uid);
+            localStorage.setItem("email", data.email);
+
+            showStep("cont-e");
+            startTimer();
+            return;
+        }
+
+        // 👇 LOGIN OK
+        if (data.status === "OK") {
+            localStorage.setItem("UID", data.user.uid);
+            localStorage.setItem("email", data.user.email);
+            localStorage.setItem("name", data.user.name);
+
+            window.location.href = "../main/penal.html";
+        }
+
+    } catch (err) {
+        showError("erreur1", err.message);
+    } finally {
+        document.getElementById("overlay").style.display = "none";
+    }
+});*/
+
 
 
 document.getElementById("put-email").addEventListener("click", function(event) {
@@ -383,19 +433,3 @@ document.getElementById("recup").addEventListener("click", function(event) {
         });
 });
 
-function showError(elementId, message) {
-    const errorElement = document.getElementById(elementId);
-    if (errorElement) {
-        errorElement.textContent = message;
-        errorElement.style.display = 'block';
-    }
-}
-
-function hideErrors() {
-    document.querySelectorAll('.error').forEach((errorElement) => {
-        errorElement.style.display = 'none';f
-    });
-}
-
-
-}

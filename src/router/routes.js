@@ -1,5 +1,5 @@
 // src/router/routes.js
 export const ROUTES = {
-  login: "/public/main/login1.html",
-  penal: "/public/main/penal.html"
+  login: "/src/main/login1.html",
+  penal: "/src/main/penal.html"
 };
