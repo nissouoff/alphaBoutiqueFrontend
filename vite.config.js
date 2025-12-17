@@ -2,27 +2,18 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
-  root: '.', // racine = le dossier racine du repo
-  publicDir: 'public', // ton dossier public avec css/js/html
+  root: 'src',        // Vite regarde dans src/ pour index.html
+  publicDir: '../public', // dossier public à copier dans build
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
     },
   },
-  server: {
-    port: 5173,
-    open: true,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3000', // backend local
-        changeOrigin: true,
-        secure: false,
-      },
-    },
-  },
   build: {
-    outDir: 'dist', // build final
+    outDir: '../dist', // build final à la racine
     emptyOutDir: true,
-    sourcemap: false,
+    rollupOptions: {
+      input: 'src/index.html', // explicitement l’entrée
+    },
   },
 });
